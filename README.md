@@ -1,6 +1,6 @@
 # jsPsych v8 Freeman Lab Template
 
-This is a template to get you started with creating jsPsych studies. 
+This is a template to get you started with creating jsPsych studies. Note that this uses jsPsych version 8.
 
 ## Creating a Trial
 To create a new trial, declare a new const variable in `main.js`, set the type to the plugin you want to use, set any relevant parameters, and set the trial name. For example:
@@ -41,7 +41,7 @@ const sampleSurveyTrial = {
 Don't forget to add your new trial to the timeline!
 
 ## Other Stuff
-There are many other things you can do with jsPsych that aren't covered here! You can use the `on_finish()` or `on_start()` functions to add more logic to trials. You can use the `data` parameter to save custom information. You can even make custom plugins to create a new type of trial. The [jsPsych website](https://www.jspsych.org/v8/) is a great resource to learn more.
+There are many other things you can do with jsPsych that aren't covered here! You can use timeline variables to repeat the same trial with different stimuli. You can use the `on_finish()` or `on_start()` functions to add more logic to trials. You can even create custom plugins to add a new type of trial. The [jsPsych website](https://www.jspsych.org/v8/) has helpful tutorials and documentation to help you learn more!
 
 # Files
 Here is a quick rundown of what each file in this template does:
@@ -87,3 +87,8 @@ When you run your study, this is the file the browser starts with. To use any js
 This file recieves requests to save data.
 
 When a paritipant completes the study, `init.js` sends out a request to save the data to the server. This file recieves that request and saves the file a folder called `data` folder. You can change which folder it saves to by changing `$dir = "../data";`. This script will run automatically on a properly configured web server, so you should never have to run it manually.
+
+## Tips and Tricks
+- If you are using VSCode, the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension is a great tool for testing your study locally in a browser. Just be sure to set `DEBUG_SAVE` to true while testing so you can access the saved data!
+- If you want to test your study on a web server but don't have one handy, look into [XAMPP](https://www.apachefriends.org/download.html) to run a local web server.
+- Did you change your code but don't see the changes in the browser? Try hard refreshing the page with Ctrl+Shift+R (Windows) / Command+Shift+R (Mac).
