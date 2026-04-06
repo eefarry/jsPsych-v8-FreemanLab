@@ -2,8 +2,6 @@
 
 This is a template to get you started with creating jsPsych studies. 
 
-https://www.jspsych.org/v8/
-
 ## Creating a Trial
 To create a new trial, declare a new const variable in `main.js`, set the type to the plugin you want to use, then set any relevant parameters. For example:
 
