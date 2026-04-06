@@ -1,12 +1,18 @@
 // Imports
 import { config } from './config.js';
 import { jsPsych } from './init.js';
+import * as content from './content.js';
 
 // Trials
 const sampleTrial = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: "This is a sample trial.",
-    choices: ["Button 1", "Button 2"]
+    stimulus: "Do you like cats or dogs?",
+    choices: ["Cats", "Dogs"]
+};
+
+const sampleSurveyTrial = {
+    type: jsPsychSurvey,
+    survey_json: content.sampleSurveyContent
 };
 
 if (config.DEBUG_LOGS) console.log("Example") // Sample debug log that only prints if DEBUG_LOGS is true
@@ -14,6 +20,9 @@ if (config.DEBUG_LOGS) console.log("Example") // Sample debug log that only prin
 // Timeline
 var timeline = [];
 
-timeline.push(sampleTrial);
+timeline.push(
+    sampleTrial,
+    sampleSurveyTrial
+);
 
 jsPsych.run(timeline);
