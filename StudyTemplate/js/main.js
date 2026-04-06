@@ -6,13 +6,15 @@ import * as content from './content.js';
 // Trials
 const sampleTrial = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: "images/fireball.png",
-    choices: ["Cats", "Dogs"]
+    stimulus: "Do you like cats or dogs?",
+    choices: ["Cats", "Dogs"],
+    data: { trial_name: "pets" }
 };
 
 const sampleSurveyTrial = {
     type: jsPsychSurvey,
-    survey_json: content.sampleSurveyContent
+    survey_json: content.sampleSurveyContent,
+    data: { trial_name: "colors" }
 };
 
 if (config.DEBUG_LOGS) console.log("Example") // Sample debug log that only prints if DEBUG_LOGS is true
