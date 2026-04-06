@@ -6,7 +6,7 @@ import * as content from './content.js';
 // Trials
 const sampleTrial = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: "Do you like cats or dogs?",
+    stimulus: "images/fireball.png",
     choices: ["Cats", "Dogs"]
 };
 
