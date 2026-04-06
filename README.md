@@ -3,15 +3,18 @@
 This is a template to get you started with creating jsPsych studies. 
 
 ## Creating a Trial
-To create a new trial, declare a new const variable in `main.js`, set the type to the plugin you want to use, then set any relevant parameters. For example:
+To create a new trial, declare a new const variable in `main.js`, set the type to the plugin you want to use, set any relevant parameters, and set the trial name. For example:
 
 ```js
 const exampleTrial = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: "Press "F" to continue.",
-    choices: ["f"]
+    choices: ["f"],
+    data: { trial_name: "press_f" }
 };
 ```
+Note that adding a trial name to the data is not required, but it recommended to make your data more readable and easier to analyze.
+
 Then add the trial to the desired position in the timeline at the bottom of `main.js`. It should look something like this:
 ```js
 timeline.push(
@@ -31,6 +34,7 @@ Then go to `main.js` and create a new const variable, just like you would for a 
 const sampleSurveyTrial = {
     type: jsPsychSurvey,
     survey_json: content.sampleSurveyContent
+    data: { trial_name: "sample" }
 };
 ```
 
@@ -47,7 +51,7 @@ This file handles jsPsych initialization and data saving.
 
 It creates a random session ID to associate with the save file. 
 
-After the last trial ends, it will show a completion message and provide a link back to Prolific (which can be customized in `config.js`). If `DEBUG_SAVE` is set to `true` in `config.js`, then the data will be saved to your downloads folder. Otherwise, it will be saved to the server using the PHP script (which will not work if not running on a server).
+After the last trial ends, it will show a completion message and provide a link back to Prolific (which can be customized in `config.js`). If `DEBUG_SAVE` is set to `true` in `config.js`, then the data will be saved to your computer. Otherwise, it will be saved to the server using the PHP script (which will not work if not running on a server).
 
 ### main.js
 This file handles trials and timelines.
