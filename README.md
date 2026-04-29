@@ -17,6 +17,7 @@ For a full breakdown of what each file does, see [the wiki](https://github.com/e
 - Screener trial that aborts study without saving if failed
 - 2 sample trials
 - Demographics trial with optional feedback box
+- SurveyJS integration
 - Automatic retrieval of Prolific ID from URL
 - PHP script for saving data to webserver
 - Config file with debug options
